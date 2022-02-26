@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Selecting an Element!</title>
+  <meta name="description" content="" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <ul class="container">
+      <li class="box" id="box-1"></li>
+      <li class="box box-to-select" id="box-2"></li>
+      <li class="box box-to-select" id="box-3"></li>
+      <li class="box box-to-select" id="box-4"></li>
+      <li class="box" id="box-5"></li>
+      <li class="box box-to-select-2" id="box-6"></li>
+      <li class="box box-to-select-2" id="box-7"></li>
+      <li class="box box-to-select-2" id="box-8"></li>
+    </ul>
+    <button class="btn-circle"> Circle & Black </button>
+    <button class="btn-rest"> Reset Color</button>
+    <button class="btn-toggle">Toggle </button>
+
+  </div>
+
+  <script>
+      //Get element by id
+      const box = document.getElementById("box-1");
+      //--------------------ADD Class circle to allboxes---------------
+      var circleBtn = document.querySelector(".btn-circle")
+      var allboxes = document.querySelectorAll(".box")
+      //Write code here
+circleBtn.addEventListener("click",function(){
+  for(const element of allboxes){
+    element.classList.add("circle");
+  }
+})
+
+
+      //---------------------Remove Class circle from allboxes---------
+      var resetBtn = document.querySelector(".btn-rest")
+      //Write code here
+resetBtn.addEventListener("click",function(){
+  for(const element of allboxes){
+    element.classList.remove("circle")
+  }
+})
+      
+      //---------------------Toggle Class circle -----------------------
+      var toggleBtn = document.querySelector(".btn-toggle")
+      //Write code here
+      toggleBtn.addEventListener("click",function(){
+        for(const element of allboxes){
+          element.classList.toggle("circle")
+        }
+      })
+
+  </script>
+</body>
+</html>
